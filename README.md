@@ -1,2 +1,2 @@
 # librimod-steam
- The librimod for the Steam launcher
+The librimod for the Steam launcher
