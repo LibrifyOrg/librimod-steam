@@ -1,10 +1,17 @@
 class SteamLauncherPlugin {
-	constructor(app) {
-		const SteamLauncher = require("./launcher")(app);
+	enable(app) {
+		this.app = app;
+
+		const SteamLauncher = require("./launcher")(this.app);
 		const launcher = new SteamLauncher();
 
-		app.games.launchers.register("steam", launcher);
-		app.games.actionTypes.register("steam", launcher.launch);
+		this.app.games.launchers.register("steam", launcher);
+		this.app.games.actionTypes.register("steam", launcher.launch);
+	}
+
+	disable() {
+		this.app.game.launchers.unregister("steam");
+		this.app.game.actionTypes.unregister("steam");
 	}
 }
 
