@@ -15,4 +15,4 @@ class SteamLauncherPlugin {
 	}
 }
 
-module.exports = app => new SteamLauncherPlugin(app);
+module.exports = new SteamLauncherPlugin();
