@@ -43,11 +43,12 @@ module.exports = app => class SteamLauncher extends app.games.launchers.model() 
 		return games;
 	}
 
-	createGame({name, steamid}) {
+	createGame({name, steamid, buildid}) {
 		const game = app.games.create({name});
 
 		game.addAction({type: "steam", name: "Launch from Steam", primary: true});
 		game.data.steamid = steamid;
+		game.data.version = buildid + ".0.0";
 
 		return game;
 	}
