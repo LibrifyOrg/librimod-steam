@@ -35,7 +35,7 @@ module.exports = app => class SteamLauncher extends app.games.launchers.model() 
 		for(let fileName of fileNames) {
 			const filePath = path.join(folder, fileName);
 			const fileData = vdf.parse((await util.promisify(fs.readFile)(filePath)).toString()).AppState;
-			const game = this.createGame({name: fileData.name, steamid: fileData.appid});
+			const game = this.createGame({name: fileData.name, steamid: fileData.appid, buildid: fileData.buildid});
 
 			games.push(game);
 		}
