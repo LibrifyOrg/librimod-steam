@@ -10,8 +10,8 @@ class SteamLauncherPlugin {
 	}
 
 	disable() {
-		this.app.game.launchers.unregister("steam");
-		this.app.game.actionTypes.unregister("steam");
+		this.app.games.launchers.unregister("steam");
+		this.app.games.actionTypes.unregister("steam");
 	}
 }
 
